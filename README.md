@@ -1,6 +1,6 @@
 # Simplon.co
 
-## _Brief_JAVA_BACKEND-Grp4_
+## _Brief_JAVA_BACKEND-Grp2_
 
 ![Preview](https://github.com/yabarji59/Brief_JAVA_BACKEND-Grp4/blob/main/Java8.png?raw=true)
 
@@ -122,5 +122,5 @@ Ainsi que toute les ressource donnés pendant le module.
 MIT
 **Free Software, Hell Yeah!**
 
-   [git-repo-url]: <https://github.com/yabarji59/Brief_JAVA_BACKEND-Grp4.git>
+   [git-repo-url]: <https://github.com/yabarji59/Brief_JAVA_BACKEND-Grp2.git>
    [Docs officiel JAVA]: <https://docs.oracle.com/en/java/>
