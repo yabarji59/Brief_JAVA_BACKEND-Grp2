@@ -1,4 +1,5 @@
 # Simplon.co
+# Karima ( réf JAVA ), Alexandra, Amira et Justine
 
 ## _Brief_JAVA_BACKEND-Grp2_
 
