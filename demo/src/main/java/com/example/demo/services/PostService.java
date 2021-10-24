@@ -22,17 +22,21 @@ public class PostService {
 		return this.postRepo.save(post);
 	}
 	
-	public Post findbyId(Long id) {
+	public Post findById(Long id) {
 		Optional<Post> optionalPost = this.postRepo.findById(id);
 		return optionalPost.get();
 	}
 
 	public Post updatePost(Long id, @Valid Post modifiedPost) {
-		final Post post = this.findbyId(id);
+		final Post post = this.findById(id);
 		post.setTitle(modifiedPost.getTitle());
 		post.setContent(modifiedPost.getContent());
 		post.setTags(modifiedPost.getTags());
 		return this.postRepo.save(post);
+	}
+
+	public void deletePost(Long postId) {
+		final Post post = this.findById(postId);
 	}
     
 }

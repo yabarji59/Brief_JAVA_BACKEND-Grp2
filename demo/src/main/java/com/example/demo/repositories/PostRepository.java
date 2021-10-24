@@ -26,6 +26,8 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 
     Post updatePost(Long id, Post modifiedPost);
 
+    Post deletePost(Long id);
+
     //Boolean existsById(Long id);
 
 }
