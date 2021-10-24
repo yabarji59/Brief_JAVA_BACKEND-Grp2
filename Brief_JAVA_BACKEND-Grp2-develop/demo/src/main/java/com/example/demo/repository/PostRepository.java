@@ -1,7 +1,6 @@
 package com.example.demo.repository;
-
 import java.util.List;
-import java.util.Optional;
+
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -9,11 +8,9 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.models.*;
 
 
+
 @Repository
-public interface PostRepository extends JpaRepository<Post, Long> {
-	
-	Optional<Post> findByTitle(String title);
+public interface PostRepository extends JpaRepository<Post, String> {
 
-
-
+    List<Post> findAllByTitleContaining(String title);
 }
