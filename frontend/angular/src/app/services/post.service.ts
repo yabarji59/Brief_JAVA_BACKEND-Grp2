@@ -14,7 +14,7 @@ export class PostService {
   }
 
   list(): Observable<any> {
-    return this.http.get(baseUrl);
+    return this.http.get(baseUrl );
   }
 
   get(id: string): Observable<any> {

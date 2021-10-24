@@ -49,6 +49,7 @@ export class PostFormComponent implements OnInit {
       this.saveEditedPost();
     } else {
       this.createNewPost();
+      this.router.navigate([ '/posts' ]);
     }
   }
 

@@ -1,17 +1,15 @@
 package com.example.demo.models;
+import java.util.Objects;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
 
 
 @Entity
-@Table(name = "post")
-public class Post implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+@Table(name = "posts")
+public class Post  {
 
     @Id
     @GeneratedValue(generator = "uuid")
@@ -87,9 +85,26 @@ public class Post implements Serializable {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Post)) {
+            return false;
+        }
+        Post post = (Post) o;
+        return Objects.equals(id, post.id) && Objects.equals(title, post.title) && Objects.equals(content, post.content)
+                && Objects.equals(tags, post.tags) && published == post.published;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, content, tags, published);
+    }
+
+    @Override
     public String toString() {
         return "{" + " id='" + getId() + "'" + ", title='" + getTitle() + "'" + ", content='" + getContent() + "'"
                 + ", tags='" + getTags() + "'" + ", published='" + isPublished() + "'" + "}";
     }
-    
+
 }
