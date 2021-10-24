@@ -27,8 +27,15 @@ public class PostController {
         {
         return "Hello java";
         }
-
-
+        /**
+         * @author: Alex
+         * @param title: le titre du post qu'on cherche
+         * @return le post qui correspond
+         */
+        @GetMapping("/posts?title={title}")
+        public Post findByTitle(@PathVariable(value = "title") String title) {
+            return this.postServ.findByTitle(title);
+        }
         
         /**
          * @author: Alex <3

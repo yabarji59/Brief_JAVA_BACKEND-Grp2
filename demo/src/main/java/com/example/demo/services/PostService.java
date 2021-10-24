@@ -26,6 +26,10 @@ public class PostService {
 		Optional<Post> optionalPost = this.postRepo.findById(id);
 		return optionalPost.get();
 	}
+	public Post findByTitle(String title) {
+		Optional<Post> optionalPost = this.postRepo.findByTitle(title);
+		return optionalPost.get();
+	}
 
 	public Post updatePost(Long id, @Valid Post modifiedPost) {
 		final Post post = this.findById(id);
