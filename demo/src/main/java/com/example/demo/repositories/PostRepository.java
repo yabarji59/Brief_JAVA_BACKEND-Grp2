@@ -28,6 +28,4 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 
     Post deletePost(Long id);
 
-    //Boolean existsById(Long id);
-
 }

@@ -35,8 +35,8 @@ public class PostService {
 		return this.postRepo.save(post);
 	}
 
-	public void deletePost(Long postId) {
-		final Post post = this.findById(postId);
+	public void deleteById(Long postId) {
+		this.postRepo.deleteById(postId);
 	}
     
 }

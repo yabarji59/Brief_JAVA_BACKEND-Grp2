@@ -57,8 +57,8 @@ public class PostController {
          * @param id: id du post à supprimer
          */
         @DeleteMapping("/posts/{id}")
-        public void deletePost(@PathVariable(value = "id") Long id){
-            this.postServ.deletePost(id);
+        public void deleteById(@PathVariable(value = "id") Long id){
+            this.postServ.deleteById(id);
         }
 
 }
