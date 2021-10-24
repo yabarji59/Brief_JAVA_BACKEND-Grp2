@@ -1,6 +1,5 @@
 package com.example.demo.controllers;
 
-import com.example.demo.repositories.PostRepository;
 import com.example.demo.services.PostService;
 import com.example.demo.models.Post;
 
@@ -18,15 +17,22 @@ public class PostController {
 
     @Autowired
 	private PostService postServ;
-	
-	@Autowired
-	private PostRepository postRepo;
     
     @RequestMapping("/")
     public String hello() 
         {
         return "Hello java";
         }
+
+        /**
+         * @author: Amira
+         * @return une liste de tous les posts
+         */
+        @GetMapping("/posts")
+        public List<Post> getAllPosts() {
+            return this.postServ.getAllPosts();
+        }
+
         /**
          * @author: Alex
          * @param title: le titre du post qu'on cherche
@@ -57,7 +63,16 @@ public class PostController {
 		return this.postServ.addPost(post);
 	    }
 	
-
+        /**
+         * @author: Justine
+         * @param id: id du post à modifier
+         * @param modifiedPost: objet post modifié
+         * @return un post modifié
+         */
+        @PutMapping("/posts")
+        public Post updatePost(Long id, @Valid Post modifiedPost){
+            return this.postServ.updatePost(id, modifiedPost);
+        }
 
         /**
          * @author: Alex et Amira
